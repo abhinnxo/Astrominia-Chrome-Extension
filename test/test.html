@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      window.onload = function chkInternetStatus() {
+        if (navigator.onLine) {
+          alert("Hurray! You're online!!!");
+        } else {
+          alert(
+            "Oops! You're offline. Please check your network connection..."
+          );
+        }
+      };
+    </script>
+  </body>
+</html>
