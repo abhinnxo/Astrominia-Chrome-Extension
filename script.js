@@ -51,6 +51,6 @@ window.addEventListener("load", function () {
       document.querySelector(".time").style.color = `black`;
     }
     // Background Image
-    document.body.style.backgroundImage = `url("./offlineBGC.png")`;
+    document.body.style.backgroundImage = `url("./images/offlineBGC.jpg")`;
   }
 });
