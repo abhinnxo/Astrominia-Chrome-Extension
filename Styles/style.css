@@ -24,6 +24,12 @@ body {
   opacity: 1;
   font-weight: bold;
   cursor: pointer;
+  font-size: 12.75px;
+}
+.author {
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 12.75px;
 }
 
 .quote-box {
@@ -40,10 +46,6 @@ body {
 }
 .quote {
   font-size: 1.5rem;
-}
-.author {
-  font-weight: bold;
-  cursor: pointer;
 }
 
 .time-box {
