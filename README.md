@@ -2,7 +2,7 @@
 Beautiful Images from NASA and Quotes on Every New Tab You Open.
 
 ## Live Preview
-See How the Extension will work on Opening a New Tab, witjout actually installing remotely on your browser. (Click Here.](https://astrominia.netlify.app/)
+See How the Extension will work on Opening a New Tab, witjout actually installing remotely on your browser. [Click Here.](https://astrominia.netlify.app/)
 
 
 ## Screenshot Preview
