@@ -25,5 +25,14 @@ See How the Extension will work on Opening a New Tab, without actually installin
 Unfortunately I don't have a Chrome Developers Account, if I have had, it would be very easy for any one to Install. 
 Let's see how to Install the Extension in your Browser Manually.
 
+1) Step 1: Download the repository, a .zip file will be downloaded, extact the zip file.
+2) Step 2: Open your Browser, type <strong>chrome://extensions</strong> in case of Chrome or <strong>edge://extensions</strong> in case of Edge and hit enter.
+3) Step 3: When you enter that settings page you will see a Developer Mode Toggler(Top-right in Chrome and Bottom-left n Edge), toggle it on.
+   You will see a <strong>Load Unpacked</strong> tab on the top.
+4) Step 4: Click on <strong>Load Unpacked</strong> and select the Folder directory where you have unzipped the downloaded folder.
+
+<h2> Voilà! Your Extension has been installed Manually by you.</h2>
+
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
