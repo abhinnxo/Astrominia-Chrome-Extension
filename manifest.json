@@ -2,7 +2,7 @@
   "name": "New Tab | By Astrominia",
   "author": "Abhinn krishn",
   "description": "Beautiful Astronomical New Tab Pages.",
-  "version": "0.1.0",
+  "version": "0.2.0",
 
   "chrome_url_overrides": {
     "newtab": "index.html"
@@ -12,9 +12,9 @@
   "browser_action": {
     "default_icon": "icon.png"
   },
-  "permissions": ["tabs"],
   "background": {
-    "scripts": ["script.js"],
+    "scripts": ["./Scripts/script.js"],
     "persistent": false
-  }
+  },
+  "permissions": ["tabs"]
 }
