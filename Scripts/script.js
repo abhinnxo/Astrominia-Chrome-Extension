@@ -1,11 +1,13 @@
-// New tab opens
+const API_KEY = "YOUR_API_KEY_HERE"
+// get your API key from https://api.nasa.gov/
 
+// New tab opens
 window.addEventListener("load", function () {
   //checking is the user is connected to the internet and show content respectively
   if (navigator.onLine) {
     // NASA API
     fetch(
-      `https://api.nasa.gov/planetary/apod?api_key=ElX39wPTA75lR7fdztpTM7c16I6nwN2scRgs4ZaX`
+      `https://api.nasa.gov/planetary/apod?api_key=YOUR_API_KEY_HERE`
     )
       .then((response) => response.json())
       .then((data) => {
