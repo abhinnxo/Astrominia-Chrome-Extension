@@ -22,8 +22,9 @@ See How the Extension will work on Opening a New Tab, without actually installin
    2) New Microsoft Edge.
    
 ## How to Install
-Unfortunately I don't have a Chrome Developers Account, if I have had, it would be very easy for any one to Install. 
-Let's see how to Install the Extension in your Browser Manually.
+Install from the Chrome Webstore. [link](https://bit.ly/3eSqWOc)
+
+Install the Extension in your Browser Manually(for Developers).
 
 1) Step 1: Download the repository, a .zip file will be downloaded, extact the zip file.
 2) Step 2: Open your Browser, type <strong>chrome://extensions</strong> in case of Chrome or <strong>edge://extensions</strong> in case of Edge and hit enter.
