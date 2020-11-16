@@ -8,7 +8,7 @@ function showPage() {
 }
 
 // get your API key from https://api.nasa.gov/
-const API_KEY = "lpeRg5GX4wVJRCfbbFstFeYiNOm94RyzHOlJb6gd"
+const API_KEY = "YOUR_API_KEY"
 
 // New tab opens
 window.addEventListener("load", function () {
