@@ -1,17 +1,13 @@
-// Pre-Loader
-function loaderTimeout() {
-  myVar = setTimeout(showPage, 2000);
-}
-function showPage() {
-  document.querySelector(".loader").style.display = "none";
-  document.querySelector(".whole-content").style.display = "block";
-}
-
 // get your API key from https://api.nasa.gov/
 const API_KEY = "YOUR_API_KEY"
 
 // New tab opens
 window.addEventListener("load", function () {
+  setInterval(hideLoader, 2000);
+  function hideLoader() {
+    document.querySelector(".loader").style.display = "none"
+    document.querySelector(".whole-content").style.display = "block"
+  }
   //checking is the user is connected to the internet and show content respectively
   if (navigator.onLine) {
     // NASA API
@@ -79,4 +75,8 @@ window.addEventListener("load", function () {
       document.querySelector(".time").innerHTML = `${localTime}`;
     }
   }
+<<<<<<< Updated upstream
 });
+=======
+});
+>>>>>>> Stashed changes
