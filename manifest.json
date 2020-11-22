@@ -18,6 +18,5 @@
   "background": {
     "scripts": ["./Scripts/script.js"],
     "persistent": false
-  },
-  "permissions": ["tabs"]
+  }
 }
