@@ -1,13 +1,14 @@
+// Pre-Loader
+setTimeout(() => {
+    document.querySelector(".loader").style.display = "none";
+    document.querySelector(".whole-content").style.display = "block";
+}, 2000)
+
 // get your API key from https://api.nasa.gov/
-const API_KEY = "YOUR_API_KEY"
+const API_KEY = "DzSccNLRtQR41FvrEABdSaBdoAj6johLv3a8hApE"
 
 // New tab opens
 window.addEventListener("load", function () {
-  setInterval(hideLoader, 2000);
-  function hideLoader() {
-    document.querySelector(".loader").style.display = "none"
-    document.querySelector(".whole-content").style.display = "block"
-  }
   //checking is the user is connected to the internet and show content respectively
   if (navigator.onLine) {
     // NASA API
@@ -16,9 +17,14 @@ window.addEventListener("load", function () {
     )
       .then((response) => response.json())
       .then((data) => {
-        //TODO: make available for video when avaliable
-        document.querySelector(".whole-content").style.backgroundImage = `url("${data.url}")`;
-        document.querySelector(".download-image").setAttribute("download", `${data.url}`);
+        //Background Image
+        if (data.url) {
+          document.querySelector(".whole-content").style.backgroundImage = `url("${data.url}")`;
+        }
+        else {
+          var random = Math.floor(Math.random() * 16) + 1;
+          document.querySelector(".whole-content").style.backgroundImage = `url("./images/offline/${random}.jpg")`;
+        }
 
         if (data.copyright != undefined)
           document.querySelector(
@@ -27,16 +33,24 @@ window.addEventListener("load", function () {
         if (data.title != undefined)
           document.querySelector(".title").innerHTML = `${data.title}`;
       })
-      .catch((err) => console.log("Something's wrong with NASA API"));
+      .catch(() => {
+        var random = Math.floor(Math.random() * 16) + 1;
+        document.querySelector(".whole-content").style.backgroundImage = `url("./images/offline/${random}.jpg")`;
+      })
 
     // Quote API
       fetch("https://api.quotable.io/random?maxLength=215")
       .then((response) => response.json())
       .then((data) => {
-          document.querySelector(".quote").innerHTML = `${data.content}`;
-          document.querySelector(".qauthor").innerHTML = `- ${data.author}`;
+        document.querySelector(".quote").innerHTML = `${data.content}`;
+        localStorage.setItem('quote', `${data.content}`)
+        document.querySelector(".qauthor").innerHTML = `- ${data.author}`;
+        localStorage.setItem('author', `${data.author}`)
       })
-      .catch((err) => console.log("Something's wrong with Quote API"));
+      .catch(() => {
+        document.querySelector(".quote").innerHTML = localStorage.getItem("quote");
+        document.querySelector(".qauthor").innerHTML = localStorage.getItem("author");
+      });
       
     // Time
     var myVar = setInterval(myTimer, 1000);
@@ -75,8 +89,4 @@ window.addEventListener("load", function () {
       document.querySelector(".time").innerHTML = `${localTime}`;
     }
   }
-<<<<<<< Updated upstream
 });
-=======
-});
->>>>>>> Stashed changes

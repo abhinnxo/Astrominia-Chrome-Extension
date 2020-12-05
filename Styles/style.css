@@ -1,42 +1,43 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;   
+  font-family: Arial, Helvetica, sans-serif;
 }
 body {
   cursor: default;
 }
-.unselectable {
-   -webkit-user-select: none;
-   user-select: none;
-}
 /* PRE-LOADER */
 .loader {
+  user-select: none;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  z-index: 5;
+}
+.loader img {
   position: absolute;
   left: 50%;
   top: 50%;
   margin-left: -37.5px;
   margin-top: -37.5px;
-  z-index: 5;
-}
-.loader img {
   height: 75px;
   width: 75px;
   animation: opac 1s ease-in-out infinite;
 }
-  @keyframes opac {
-    0% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.7;
-    }
-    100% {
-      opacity: 1;
-    }
+@keyframes opac {
+  0% {
+    opacity: 1;
   }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .whole-content {
   display: none;
+  user-select: none;
   height: 100vh;
   width: 100vw;
   background-size: cover;
@@ -52,6 +53,7 @@ body {
   border-radius: 5px;
   padding: 5px 10px;
 }
+
 .title {
   opacity: 1;
   font-weight: bold;
@@ -63,6 +65,7 @@ body {
   cursor: pointer;
   font-size: 12.75px;
 }
+
 .quote-box {
   position: absolute;
   z-index: 1;
@@ -78,6 +81,7 @@ body {
 .quote {
   font-size: 1.5rem;
 }
+
 .time-box {
   width: 100%;
   display: flex;
@@ -91,12 +95,14 @@ body {
   bottom: 50vh;
   text-shadow: 1px 1px 5px #000000;
 }
+
 /* MENU */
 .menu-div {
-  position: relative; 
+  position: relative;
   float: right;
   margin: 25px;
 }
+
 .gear-icon {
   position: relative;
   cursor: pointer;
@@ -108,28 +114,38 @@ body {
   transform: rotate(0deg);
   transition: 0.5s ease all;
 }
+
 .gear-icon:hover {
   transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
   transform-origin: center;
-  -moz-transform-origin: center;
-  -webkit-transform-origin: center;
   transition: 0.5s ease all;
-  -moz-transition: 0.5s ease all;
 }
 .menu {
+  position: absolute;
   display: none;
-  height: fit-content;
+  right: 23px;
+  top: 23px;
   width: 10rem;
   padding: 5px;
   background-color: #ffffff;
   opacity: 0.8;
   border-radius: 10px;
   z-index: 1;
+  overflow: hidden;
 }
 .menu-div:hover .menu {
   display: block;
+  animation: menuShow 0.2s ease-in-out;
+}
+@keyframes menuShow {
+  0% {
+    width: 0rem;
+    height: 0;
+  }
+  100% {
+    width: 10rem;
+    height: 159px;
+  }
 }
 
 ul {
@@ -138,20 +154,10 @@ ul {
   color: #1e1e1e;
 }
 li {
-<<<<<<< Updated upstream
   padding: 5px;
-=======
-  font-size: 1rem;
-  font-weight: 300;
-  padding-bottom: 5px;
-  padding-left: 5px;
-}
-li:first-child {
-  padding-top: 5px;
->>>>>>> Stashed changes
+  font-size: 17px;
 }
 a {
-
   cursor: pointer;
   transition: 0.1s ease-out;
   color: #1e1e1e;
@@ -167,7 +173,7 @@ a:hover {
   margin: 25px;
   bottom: 0;
   right: 0;
-  animation: wifi 1s infinite ease-in-out;
+  animation: wifi 1s infinite ease-out;
 }
 @keyframes wifi {
   0% {
