@@ -1,39 +1,80 @@
-# Astrominia-Chrome-Extension
-Beautiful Images from NASA and Quotes on Every New Tab You Open.
+# Astrominia – New Tab Chrome Extension
+
+Beautiful NASA Astronomy Picture of the Day images and inspiring quotes on every new tab. Works online and offline with graceful fallbacks.
 
 ## Live Preview
-See How the Extension will work on Opening a New Tab, without actually installing remotely on your browser. [Click Here.](https://astrominia.netlify.app/)
+See how the new tab looks without installing: [Live Demo](https://astrominia.netlify.app/)
 
+## Screenshot
+![Astrominia Screenshot](./images/displayImage.png)
 
-## Screenshot Preview
-![Image](./images/displayImage.png)
+## Features
+- Daily background from NASA APOD (with copyright and title when available)
+- Motivation via random quotes from Quotable
+- Offline-friendly: shows a local curated image and last cached quote/author
+- Minimal UI: time display, author/title, and a small menu
+- Lightweight, no tracking
 
-## APIs used
-1) [NASA APoD](https://api.nasa.gov/)
+## Installation
 
-   Sends a new Image everyday.
+### From the Chrome Web Store
+Install the extension directly: [Chrome Web Store link](https://bit.ly/3eSqWOc)
 
-2) [Quotable](https://api.quotable.io/)
+### Manual installation (Developer mode)
+1. Download or clone this repository and unzip if needed.
+2. In Chrome or Edge, open the Extensions page:
+   - Chrome: `chrome://extensions`
+   - Edge: `edge://extensions`
+3. Enable Developer mode.
+4. Click "Load unpacked" and select this project folder.
 
-   Gives a Wisdom.
-   
-## Supported Browsers
-   1) Google Chrome.
-   2) New Microsoft Edge.
-   
-## How to Install
-Install from the Chrome Webstore. [link](https://bit.ly/3eSqWOc)
+## Configuration (NASA API key)
+This extension uses the NASA APOD API. You need a free API key:
+1. Request a key at: https://api.nasa.gov/
+2. Open `Scripts/script.js` and replace the placeholder:
+   ```js
+   const API_KEY = "API_KEY"; // <- replace with your key
+   ```
 
-Install the Extension in your Browser Manually(for Developers).
+Notes:
+- The key is public in the extension bundle (there is no server). Use a demo key for personal use.
+- On APOD video days or if the image is unavailable, the extension falls back to a local offline image.
 
-1) Step 1: Download the repository, a .zip file will be downloaded, extact the zip file.
-2) Step 2: Open your Browser, type <strong>chrome://extensions</strong> in case of Chrome or <strong>edge://extensions</strong> in case of Edge and hit enter.
-3) Step 3: When you enter that settings page you will see a Developer Mode Toggler(Top-right in Chrome and Bottom-left n Edge), toggle it on.
-   You will see a <strong>Load Unpacked</strong> tab on the top.
-4) Step 4: Click on <strong>Load Unpacked</strong> and select the Folder directory where you have unzipped the downloaded folder.
+## Project structure
+```
+.
+├── index.html
+├── manifest.json
+├── LICENSE
+├── Scripts/
+│   └── script.js
+├── Styles/
+│   └── style.css
+├── icons/
+└── images/
+    └── offline/
+```
 
-<h2> Voilà! Your Extension has been installed Manually by you.</h2>
+## Tech and APIs
+- NASA APOD: `https://api.nasa.gov/planetary/apod`
+- Quotable: `https://api.quotable.io/random?maxLength=215`
 
+## Privacy
+- No analytics or tracking.
+- Uses `localStorage` only to cache the last quote/author for offline use.
+- Requests images from NASA APOD and text from Quotable over HTTPS.
+
+## Support and feedback
+- Report issues or request features: https://github.com/pikachuonacid/Astrominia-Chrome-Extension/issues/
+- Buy me a coffee: https://www.buymeacoffee.com/pikachuonacid/
+
+## Compatibility note
+This repository uses Chrome Extension Manifest V2 (`manifest_version: 2`). If you plan to publish to the Chrome Web Store long‑term, consider migrating to Manifest V3.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[MIT](./LICENSE)
+
+## Credits
+- Images: NASA APOD
+- Quotes: Quotable
+- Original author: pikachuonacid
